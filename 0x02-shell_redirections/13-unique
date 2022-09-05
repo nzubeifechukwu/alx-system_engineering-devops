@@ -1,2 +1,2 @@
 #!/bin/bash
-tr ' ' '\n' <<< "$var1" | sort | uniq -u 
+sort list | uniq -u 
