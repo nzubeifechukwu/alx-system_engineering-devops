@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# 3-until_best_school: display a string 10 times
+
+i=1
+
+until [[ "$i" -gt 10 ]]; do
+	echo "Best School"
+	i=$((i + 1))
+done
