@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Displays the content of the file /etc/passwd
+# shellcheck disable=SC2162
+
+filename=/etc/passwd
+
+while IFS=":" read -a array; do
+	echo "${array[0]}:${array[2]}:${array[5]}"
+done < $filename
