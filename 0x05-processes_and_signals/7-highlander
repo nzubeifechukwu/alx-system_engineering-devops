@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Traps a SIGTERM signal and prints the message "I am invincible!!!"
+
+trap "echo I am invincible!!!" SIGTERM
+
+while ((1 < 2)); do
+	echo "To infinity and beyond"
+	sleep 2
+done
