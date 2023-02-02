@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script displays all active IPv4 IPs on the machine it's executed
+
+/sbin/ifconfig | grep inet > ipfile
+
+while IFS=" " read -ra array; do
+	echo "${array[1]}"
+done < ipfile
