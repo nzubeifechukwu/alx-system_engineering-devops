@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Install nginx web server on my server and serve 'Hello World!' on homepage
 
+sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
 sudo chown -R "$USER":"$USER" /var/www/html
