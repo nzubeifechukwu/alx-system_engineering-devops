@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Install and configure an Nginx web server to serve a custom 404 page that
+# contains a string
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+
+sudo chown -R "$USER":"$USER" /var/www/html
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/error.html
+
+repl_str="root \/var\/www\/html;\n\terror_page 404 \/error.html;"
+sudo sed -i "s/root \/var\/www\/html;/$repl_str/" /etc/nginx/sites-available/default
+
+sudo service nginx restart
