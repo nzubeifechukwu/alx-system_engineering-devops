@@ -4,11 +4,11 @@
 # Distribute requests using a roundrobin algorithm
 # Make sure that HAproxy can be managed via an init script
 
-# sudo apt-get -y update
-# sudo apt-get -y install haproxy
-sudo apt-get install --no-install-recommends software-properties-common
-sudo add-apt-repository ppa:vbernat/haproxy-2.6
-sudo apt-get install haproxy=2.6.\*
+sudo apt-get -y update
+sudo apt-get -y install haproxy
+# sudo apt-get install --no-install-recommends software-properties-common
+# sudo add-apt-repository ppa:vbernat/haproxy-2.6
+# sudo apt-get install haproxy=2.6.\*
 
 # Ensure HAproxy can be managed via an init script
 echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
