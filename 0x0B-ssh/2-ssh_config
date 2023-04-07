@@ -1,4 +1,4 @@
-# My local SSH client configuration
+# My local SSH client configuration (path /etc/ssh/ssh_config)
 
 Host *
     SendEnv LANG LC_*
