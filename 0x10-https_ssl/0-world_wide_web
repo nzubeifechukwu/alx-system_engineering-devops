@@ -4,17 +4,16 @@
 domain="$1"
 subdomain="$2"
 
-dig_dom () {
+dig_domain () {
 	subdoms=("www" "lb-01" "web-01" "web-02")
-	# domain="$1"
 
 	if [ -z "$subdomain" ]; then
 		for sub in "${subdoms[@]}"; do
-			dig "$sub.$domain" +noall +answer | awk -v subd="$sub" '{print "The subdomain", subd, "is a", $4, "record and points to", $5}'
+			dig "$sub.$domain" | grep -A1 'ANSWER SECTION:' | tail -1 | awk -v subd="$sub" '{print "The subdomain", subd, "is a", $4, "record and points to", $5}'
 		done
 	else
-		dig "$subdomain.$domain" +noall +answer | awk -v subd="$subdomain" '{print "The subdomain", subd, "is a", $4, "record and points to", $5}'		
+		dig "$subdomain.$domain" | grep -A1 'ANSWER SECTION:' | tail -1 | awk -v subd="$subdomain" '{print "The subdomain", subd, "is a", $4, "record and points to", $5}'		
 	fi
 }
 
-dig_dom
+dig_domain
