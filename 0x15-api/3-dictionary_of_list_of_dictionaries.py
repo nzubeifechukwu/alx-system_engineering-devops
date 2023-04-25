@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-'''Get information about an employee's TODO list from a REST API
-    (https://jsonplaceholder.typicode.com/), given the employee's ID
+'''Get information about all employees' TODO lists from a REST API
+    (https://jsonplaceholder.typicode.com/) and export it in JSON format
 '''
 import json
 import requests
